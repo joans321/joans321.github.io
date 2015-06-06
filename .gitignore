@@ -1,0 +1,12 @@
+### bundle
+.bundle
+
+### jekyll
+/_site
+
+### emacs file
+*~
+.#*
+
+### vim file
+*.swp
