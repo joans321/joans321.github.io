@@ -1,6 +1,10 @@
 ---
-layout: 
+layout:  post
+title: Jekyll学习
+category: github-pages
+tags: [jekyll]
 ---
+
 _config.yml	:   配置文件
 _includes      	:   复用模板目录
 _layouts       	:   模板文件目录
