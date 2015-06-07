@@ -1,14 +1,24 @@
 ---
 layout:  post
 title: Jekyll学习
-category: github-pages
+category: 学会写博客
 tags: [jekyll]
 ---
 
-_config.yml	:   配置文件
-_includes      	:   复用模板目录
-_layouts       	:   模板文件目录
-_posts	      	:   博客文目录
-_site		:   Jekyll生成的最终文档,可在.gitignore文件中忽略它.
+> 官网链接 : [jekyllbootstrap](http://jekyllbootstrap.com/index.html)
+>
+ > 参考 : [jekyll学习](http://bg.biedalian.com/2013/08/01/use-jekyll.html)
 
-Jekyll的配置
+## 目录结构
+
+   _config.yml	:   配置文件
+
+   _includes      	:   复用模板目录
+
+   _layouts       	:   模板文件目录
+
+   _posts	      	:   博客文目录
+
+   _site		:   Jekyll生成的最终文档,可在.gitignore文件中忽略它.
+
+## Jekyll的配置
