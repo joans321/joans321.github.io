@@ -7,10 +7,10 @@ tags: [Android, 记录]
 
 ## Android工具链生成
 
-```sh
-   cd $NDK_HOME
-   ./build/tools/make-standalone-toolchain.sh  --platform=android-8 --system=linux-x86_64
-```
+{% highlight sh %}
+cd $NDK_HOME;
+./build/tools/make-standalone-toolchain.sh  --platform=android-8 --system=linux-x86_64
+{%endhighlight %}
 
 {% highlight java %}
 public class Hello {
