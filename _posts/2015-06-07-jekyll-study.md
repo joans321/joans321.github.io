@@ -9,6 +9,12 @@ tags: [jekyll]
 >
  > 参考 : [jekyll学习](http://bg.biedalian.com/2013/08/01/use-jekyll.html)
 
+## 语法高亮
+
+   http://zhanglubing.github.io/2012-09-21/jekyll-code-highlight.html
+
+   http://pygments.org/docs/lexers/
+
 ## 目录结构
 
    _config.yml	:   配置文件

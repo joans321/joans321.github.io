@@ -7,6 +7,7 @@
 ### emacs file
 *~
 .#*
+\#*#
 
 ### vim file
 *.swp
