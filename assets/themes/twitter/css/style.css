@@ -9,6 +9,13 @@
 .navbar .nav {
   float: right; }
 
+pre {
+    color: #ffffff;
+    background-color: #101010; }
+
+prev, code {
+    font-size: 14px; }
+
 /* posts index */
 .post > h3.title {
   position: relative;
