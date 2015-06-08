@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Android环境搭建
-category: Android
-tags: [Android, 记录]
+category: android
+tags: [android, 记录]
 ---
 
 ## Android工具链生成
