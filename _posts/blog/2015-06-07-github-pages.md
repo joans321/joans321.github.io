@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学会写博客索引
-category: 学会写博客
+category: how2blog
 tags: [github, jekyll, markdown, emacs]
 ---
 

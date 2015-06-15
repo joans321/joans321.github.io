@@ -1,7 +1,7 @@
 ---
 layout:  post
 title: Jekyll学习
-category: 学会写博客
+category: how2blog
 tags: [jekyll]
 ---
 
