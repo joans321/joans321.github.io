@@ -11,3 +11,6 @@
 
 ### vim file
 *.swp
+
+### private work file
+_posts/works
