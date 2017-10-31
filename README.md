@@ -4,7 +4,7 @@
 
 * jekyll
 * jupyter notebook
-* notebook 转 markdown [脚本](notebook-to-md)
+* notebook 转 markdown [脚本](notebook-to-md.sh)
 
 
 
