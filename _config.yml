@@ -4,7 +4,13 @@ permalink: /:year/:month/:day/:title
 
 exclude: ["*.ipynb", ".rvmrc", "README.md", "Rakefile", ".tmp"]
 
-markdown: redcarpet
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# another markdown interpreter  
 redcarpet:
   extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
 
@@ -17,7 +23,7 @@ title : Joans Blog
 tagline: Study every day
 author :
   name : Mr.Xue
-  email : xjq9296@gmail.com
+  email : xuejianqing@star-net.cn
   github : joans321
   twitter : none
   feedburner : none
