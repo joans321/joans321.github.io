@@ -214,9 +214,20 @@ plt.show()
   
   $$ J(\theta) = \dfrac{1}{2}(X \theta - Y)^T (X \theta - Y)$$
   
-  $\theta$ 向量更新形式:
+  $\theta$ 向量更新形式，令
   
-  $$ \theta = \theta - \alpha \cdot \dfrac{\partial J(\theta)}{\partial \theta}$$
+  $$\triangledown \theta = \left[
+  \begin{matrix}
+   \dfrac{\partial J}{\partial \theta_0} \\
+   \cdot \\
+   \cdot \\
+   \cdot \\
+   \dfrac{\partial J}{\partial \theta_n}
+  \end{matrix}
+  \right]
+  $$
+  
+  $$ \theta = \theta - \alpha \cdot \triangledown \theta$$
   
   我们改进一下上述 python 代码，使用矩阵处理以适应多特征系统并得出一样的结果。
 
