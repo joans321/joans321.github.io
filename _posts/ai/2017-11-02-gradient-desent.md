@@ -122,7 +122,7 @@ plt.show()
   
   损失函数使用平均方差函数: $J(\theta) = \dfrac{1}{2*6} \sum_{i=1}^6(h_\theta(X_i) - y_i)^2$ （6个样本）
   
-  假设更新步长为 0.00005， 则更新公式为 $\theta_j = \theta_j - \dfrac{1}{2} \cdot \dfrac{1}{6} \sum_{i=1}^6 (h_\theta(X_i) - y_i) \cdot X_{ij} $
+  假设更新步长为 0.00005， 则更新公式为 $\theta_j = \theta_j -  0.00005 \cdot \dfrac{1}{6} \sum_{i=1}^6 (h_\theta(X_i) - y_i) \cdot X_{ij} $
   
   其中 $\theta_j$ 包含 $\theta_0$ 和 $\theta_1$ ， $X_{i0}$ = 1。
   
@@ -227,9 +227,11 @@ plt.show()
   \right]
   $$
   
-  $$ \theta = \theta - \alpha \cdot \triangledown \theta$$
+  $$ \theta = \theta - \alpha \cdot \triangledown \theta = \theta - \alpha (\theta \cdot X \cdot X^T)$$
   
   我们改进一下上述 python 代码，使用矩阵处理以适应多特征系统并得出一样的结果。
+  
+  **注意: 用矩阵公式表示的时候没有除以样本数,实际写代码要除以样本数**
 
 
 ```python
@@ -309,4 +311,8 @@ print("theta array : " , theta)
 * 批量梯度下降法（BGD）：使用所有样本进行计算，慢但准确度好
 * 随机梯度下降法（SGD)：每次使用1个样本进行计算,快但准确度欠缺
 * 小批量梯度下降法：每次使用a个样本进行计算，是BGD和SGD的折中方案
+
+
+
+转载请注明出处: [http://blog.lisp4fun.com/2017/11/02/gradient-desent](http://blog.lisp4fun.com/2017/11/02/gradient-desent)
 
