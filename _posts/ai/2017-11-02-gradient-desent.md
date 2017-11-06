@@ -2,7 +2,7 @@
 layout: post
 title: python 梯度下降法
 category: math
-tags: math, ai, python
+tags: [math, ai, python]
 ---
 
 梯度下降法是机器学习算法更新模型参数的常用的方法之一。

@@ -2,7 +2,7 @@
 layout: post
 title: Docker环境安装
 category: docker
-tags: [docker, 记录]
+tags: [docker]
 ---
 
 ## 准备

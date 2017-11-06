@@ -2,7 +2,7 @@
 layout: post
 title: Android环境搭建
 category: android
-tags: [android, 记录]
+tags: [android]
 ---
 
 ## 工具列表
