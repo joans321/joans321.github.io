@@ -23,7 +23,8 @@
                 }
             });
     </script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
@@ -69,6 +70,24 @@
         <p>Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.name }},
           Email : <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
         </p>
+
+        {%if page.mermaid %}
+        <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.core.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.js"></script -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js"></script>
+        <script>
+            var config = {
+                startOnLoad:true,
+                flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+                }
+            };
+            mermaid.initialize(config);
+        </script>
+        <!--link href="/assets/themes/mermaid.dark.css" rel="stylesheet" type="text/css" media="all"-->
+        {% endif %}
+
       </footer>
 
     </div>
