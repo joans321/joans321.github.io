@@ -37,24 +37,22 @@ graph TD;
 
 ## 支持 Mermaid 步骤
 
-* 在 html 主题模板文件中加入以下内容加载 mermaid 脚本（如果文章的 mermaid 配置项打开脚本加载）：
+* 在 html 主题模板文件的头部加入以下内容加载 mermaid 脚本（如果文章的 mermaid 配置项打开脚本加载）：
 
-~~~scala
-      <footer>
-        {\% if page.mermaid \%}
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js"></script>
-        <script>
-            var config = {
-                startOnLoad:true,
-                flowchart:{
-                    useMaxWidth:false,
-                    htmlLabels:true
-                }
-            };
-            mermaid.initialize(config);
-        </script>
-        {\% endif \%}
-      </footer>
+~~~sh
+{\% if page.mermaid \%}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            flowchart:{
+                useMaxWidth:false,
+                htmlLabels:true
+            }
+        };
+        mermaid.initialize(config);
+    </script>
+{\% endif \%}
 ~~~
 
 **注意: 上文中 {\%  \%} 需要把 \\ 去掉，因为写文章不加 \\ 的话这句话就被 jekyll 当做语法使用了**
@@ -88,5 +86,5 @@ graph TD;
 * [Mermaid 使用文档](https://mermaidjs.github.io/)
 * [Mermaid 在线编辑器](https://mermaidjs.github.io/mermaid-live-editor)
 * [github page markdown 在线编辑器](https://jbt.github.io/markdown-editor)
-* [Mermaid简介](http://blog.csdn.net/wangyaninglm/article/details/52887045)
+* [Mermaid 简介](http://blog.csdn.net/wangyaninglm/article/details/52887045)
 
