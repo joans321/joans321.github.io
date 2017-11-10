@@ -2,7 +2,7 @@
 layout: post
 title: Github 博客画流程图
 category: how2blog
-tags: [tools, study， markdown]
+tags: [tools, study, markdown]
 description: 文章描述测试
 mermaid: true
 ---
