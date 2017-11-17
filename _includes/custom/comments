@@ -10,7 +10,7 @@
       id: window.location.pathname,
       owner: 'joans321',
       admin: ['joans321'],
-      distractionFreeMode: 'false',
+      distractionFreeMode: false,
    })
    gitalk.render('gitalk-container')
 </script>
