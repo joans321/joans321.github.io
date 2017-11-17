@@ -8,11 +8,7 @@
 
 
 
-
-
-
-
-联系邮箱： xuejianqing@star-net.cn
+联系邮箱： xjq9296@gmail.com
 
 博客地址： http://blog.lisp4fun.com
 

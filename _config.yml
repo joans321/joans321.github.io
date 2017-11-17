@@ -15,7 +15,7 @@ kramdown:
 redcarpet:
   extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
 
-highlighter: pygments
+highlighter: rouge
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -24,7 +24,7 @@ title : Joans Blog
 tagline: Study every day
 author :
   name : Mr.Xue
-  email : xuejianqing@star-net.cn
+  email : xjq9296@gmail.com
   github : joans321
   twitter : none
   feedburner : none
@@ -144,6 +144,3 @@ JB :
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
   
-gems:
-  - jekyll-jupyter-notebook
-
