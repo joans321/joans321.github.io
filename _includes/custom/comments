@@ -8,7 +8,7 @@
       clientSecret: '26a110216c6479cfeffa0aff75e5de7794c36c26',
       repo: 'comments',
       id: window.location.pathname,
-      owner: 'xuejianqing',
+      owner: 'joans321',
       admin: ['joans321'],
       distractionFreeMode: 'true',
    })
