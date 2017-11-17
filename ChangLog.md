@@ -6,6 +6,7 @@ group: navigation
 ---
 {% include JB/setup %}
 
+* 2017-11-17 : 使用基于 github issue 的评论插件 gitalk
 * 2017-11-09 : 增加 mermaid 流程图支持
 * 2017-11-03 : 使用 disqus 评论系统和 kramdown 渲染
 * 2017-10-20 : 添加 jupyter-notebook 支持

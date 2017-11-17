@@ -1,0 +1,17 @@
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="/assets/themes/gitalk.css">
+<script src="/assets/js/gitalk.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+      clientID:  '4aeb48aae37f6f16326b',
+      clientSecret: '26a110216c6479cfeffa0aff75e5de7794c36c26',
+      repo: 'comments',
+      id: window.location.pathname,
+      owner: 'joans321',
+      admin: ['joans321'],
+      distractionFreeMode: 'true',
+   })
+   gitalk.render('gitalk-container')
+</script>
+
