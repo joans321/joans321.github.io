@@ -1,6 +1,5 @@
 ---
 layout: page
-title: 关于作者
 header: About Author
 group: navigation
 ---
