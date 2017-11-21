@@ -14,8 +14,11 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <!-- load jquery -->
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+
     <!-- Latex Math -->
-   <script type="text/x-mathjax-config">
+    <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
                 inlineMath: [ ['$','$'], ['\\(','\\)'] ],
@@ -28,6 +31,7 @@
 
     {%if page.mermaid %}
         <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.core.js"></script>
+        <link href="/assets/themes/mermaid.dark.css" rel="stylesheet" type="text/css" media="all">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.js"></script -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js"></script>
         <script>
@@ -39,8 +43,25 @@
                 }
             };
             mermaid.initialize(config);
+            $(function(){
+                var elements = document.getElementsByClassName("language-mermaid");
+                for (i in elements) {
+                    element = elements[i];
+                    var graphDefinition = element.innerText;
+                    if (graphDefinition) {
+                        var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
+                        if (svg) {
+                            var svgElement = document.createElement('div');
+                            preNode = element.parentNode;
+                            svgElement.innerHTML = svg;
+                            svgElement.setAttribute('class', 'mermaid');
+                            svgElement.setAttribute('data-processed', 'true');
+                            preNode.parentNode.replaceChild(svgElement, preNode);
+                        }
+                    }
+                }
+            });
         </script>
-        <!--link href="/assets/themes/mermaid.dark.css" rel="stylesheet" type="text/css" media="all"-->
     {% endif %}
 
 
