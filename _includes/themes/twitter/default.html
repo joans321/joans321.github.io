@@ -45,7 +45,7 @@
             mermaid.initialize(config);
             $(function(){
                 var elements = document.getElementsByClassName("language-mermaid");
-                for (i in elements) {
+                for (var i = elements.length; i--;) {
                     element = elements[i];
                     var graphDefinition = element.innerText;
                     if (graphDefinition) {

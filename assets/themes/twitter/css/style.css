@@ -13,6 +13,9 @@ pre {
     color: #ffffff;
     background-color: #101010; }
 
+table td {
+    border: solid;}
+
 prev, code {
     font-size: 14px; }
 
