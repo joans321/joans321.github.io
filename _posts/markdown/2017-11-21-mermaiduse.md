@@ -128,6 +128,194 @@ TD - 跟 TB 相同
 
 ### 时序图
 
+时序图以 `sequenceDiagram` 开头声明，语法如下所示
+
+```tex
+sequenceDiagram
+    participant Alice
+    participant John
+    Alice ->> John:  实线带箭头: ->>
+    John -->> Alice: 虚线带箭头: -->>
+    Alice -> John : 实线不带箭头: ->
+    activate John
+    Note over Alice,John: 这个注释在两个人的上方
+    John --> Alice : 虚线不带箭头: -->
+    deactivate John
+    Alice -x John : 实线结尾带X: -x
+    John --x Alice : 虚线结尾带X: --x
+```
+
+显示效果如下：
+
+~~~mermaid
+sequenceDiagram
+    participant Alice
+    participant John
+    Alice ->> John:  实线带箭头: ->>
+    John -->> Alice: 虚线带箭头: -->>
+    Alice -> John : 实线不带箭头: ->
+    activate John
+    Note over Alice,John: 这个注释在两个人的上方
+    John --> Alice : 虚线不带箭头: -->
+    deactivate John
+    Alice -x John : 实线结尾带X: -x
+    John --x Alice : 虚线结尾带X: --x
+~~~
+
+
+
+
+
+* 参与者（participant）
+
+~~~tex
+participant 名称1
+participant 名称2
+participant A as Alice  : 通过 as 定义别名，后续使用 A 比较方便
+~~~
+
+**注：声明的顺序与画图的顺序一致**
+
+
+
+* 箭头类型（一个`>`不带箭头, 两个`>`带箭头; 一个`-`实线，两个`-`虚线）
+
+|  类型  |   描述   |
+| :--: | :----: |
+|  ->  | 实线不带箭头 |
+| -->  | 虚线不带箭头 |
+| ->>  | 实线带箭头  |
+| -->> | 虚线带箭头  |
+|  -x  | 实线结尾带X |
+| --x  | 虚线结尾带X |
+
+
+
+* 激活参与者
+
+```tex
+activate John    : 激活参与者
+deactivate John  : 去激活参与者
+
+也可以通过在 > 后面使用 +/- 符号表示激活和去激活，例如：
+
+Alice->>+John: Hello John, how are you?
+```
+
+
+
+* 注释
+
+```tex
+Note [ right of | left of | over ] [Actor]: Text in note content
+
+注: Actor 可以是多个，通过逗号分割，例如：
+
+Note over Alice,John: A typical interaction
+```
+
+
+
+* 循环序列
+
+~~~tex
+loop 描述文本
+... 时序图语句 ...
+end
+~~~
+
+例子
+
+~~~tex
+sequenceDiagram
+    Alice->John: Hello John, how are you?
+    loop Every minute
+        John-->Alice: Great!
+    end
+~~~
+
+显示效果
+
+~~~mermaid
+sequenceDiagram
+    Alice->John: Hello John, how are you?
+    loop Every minute
+        John-->Alice: Great!
+    end
+~~~
+
+
+
+
+
+* 条件时序
+
+~~~tex
+alt 描述文本
+... statements ...
+else
+... statements ...
+end
+~~~
+
+例子：
+
+```tex
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+```
+
+显示效果
+
+~~~mermaid
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+~~~
+
+
+
+* 可选时序
+
+~~~text
+opt 描述文本
+... statements ...
+end
+~~~
+
+例子
+
+~~~text
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    opt Extra response
+        Bob->>Alice: Fine,Thanks
+    end
+~~~
+
+显示效果
+
+~~~mermaid
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    opt Extra response
+        Bob->>Alice: Fine,Thanks
+    end
+~~~
+
+
+
+
+
 ### 甘特图
 
 
