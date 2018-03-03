@@ -1,6 +1,6 @@
 #/bin/bash
 
-tmpdir=.tmp
+tmpdir=`pwd`/.tmp
 
 if [ -z "$1" ]; then
   nbpath=_posts/notebook/2017-10-31-scatter.ipynb
@@ -22,8 +22,8 @@ out_file=$tmpdir/${basename}.md
 mkdir -p $tmpdir
 jupyter-nbconvert --to markdown --output-dir=$tmpdir $nbpath
 
-sed -i '1d' $out_file
-sed -i "s#$asset_name#/assets/$asset_name#g" $out_file
+sed -i'' -e '1d' $out_file
+sed -i'' -e "s#$asset_name#/assets/$asset_name#g" $out_file
 
 rm -rf assets/$asset_name
 mv $out_asset assets/
