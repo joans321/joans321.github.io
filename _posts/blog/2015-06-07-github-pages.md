@@ -1,9 +1,42 @@
 ---
 layout: post
-title: 学会写博客索引
+title: 博客搭建
 category: how2blog
 tags: [github, jekyll, markdown, emacs]
 ---
+
+#  博客介绍
+
+本博客是基于 github page 的 jekyll 服务搭建，可自备服务器搭建博客也可挂在 github 上面。
+
+jekyll 是基于 ruby 的静态内容服务器，支持把 markdown 格式的文档自动转成 html 的静态网页。
+
+本博客中相关数学公式以及流程图使用纯 `javascript` 方式渲染，可参考文章：
+
+* [Github 博客画流程图](/2017/11/09/mermaid-flow)
+* [Markdown 数学公式](/2017/11/01/formula)
+
+
+
+## Jekyll 环境搭建
+
+~~~Sh
+# 安装 rvm 管理 ruby 版本
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+# 安装 bundle 
+$ gem install bundle
+
+# 运行博客服务
+$ cd [blog-directory]
+$ bundle install
+$ bundle exec jekyll server
+~~~
+
+`注：macos 需要先执行 brew install gnupg 命令`
+
+
 
 # 学习内容列表
 
