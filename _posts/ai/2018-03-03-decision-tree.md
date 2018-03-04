@@ -132,12 +132,12 @@ plt.show()
 在已知随机变量A（鸢尾花的属性）的情况下，随机变量X（鸢尾花的种类）的熵。条件熵与信息熵的理论意义是相同的，都表示信息的不确定性。只是数学公式稍微有点差别，其数学公式如下：
 
 $$
-H(X|A) = \sum_i^n p_i H(X|A=a_i)
+H(X\|A) = \sum_i^n p_i H(X\|A=a_i)
 $$
 
-其中 `n` 表示属性A的分类数目，$a_i$ 表示具体的分类值， $p_i$ 表示具体分类的占比， $H(X|A=a_i)$ 表示属于A为一个具体值是的信息熵。
+其中 `n` 表示属性A的分类数目，$a_i$ 表示具体的分类值， $p_i$ 表示具体分类的占比， $H(X\|A=a_i)$ 表示属于A为一个具体值是的信息熵。
 
-以鸢尾花的花瓣宽度为例的话，我们以 `0.8cm` 为分界线，把鸢尾花花瓣宽度分为两类（即 n = 2）。样本中花瓣宽度小于 0.8 的有 50 个，大于 0.8 的有 100 个，所以 $p_0 = 50/150 = 0.3333$, $p_1 = 100 / 150 = 0.6666$ 。 $H(X|A=a_i)$ 的公式跟上面介绍的熵的计算公式是一样的，只不过每次X的样本被分为两个，分别计算这两个鸢尾花的熵。我们通过以下代码计算条件熵。
+以鸢尾花的花瓣宽度为例的话，我们以 `0.8cm` 为分界线，把鸢尾花花瓣宽度分为两类（即 n = 2）。样本中花瓣宽度小于 0.8 的有 50 个，大于 0.8 的有 100 个，所以 $p_0 = 50/150 = 0.3333$, $p_1 = 100 / 150 = 0.6666$ 。 $H(X\|A=a_i)$ 的公式跟上面介绍的熵的计算公式是一样的，只不过每次X的样本被分为两个，分别计算这两个鸢尾花的熵。我们通过以下代码计算条件熵。
 
 
 ```python
@@ -168,8 +168,10 @@ def calcConditionEntropy(feature, condition, target):
     false_condition = true_condition == False
     target_true = target[true_condition]
     target_false = target[false_condition]
+    # 每种类别的数量除以总数就计算出其概率
     p_true = target_true.size / target.size
     p_false = 1 - p_true
+    # 每种属性类别的概率乘以该类别下的信息熵
     entropy = p_true * calcEntropy(target_true) + p_false * calcEntropy(target_false)
     return entropy
 
