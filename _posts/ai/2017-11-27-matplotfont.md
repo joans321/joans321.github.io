@@ -1,6 +1,6 @@
 ---
 layout: post
-title: matplotlib 支持中文
+title: matplotlib 中文显示
 category: python
 tags: [matplotlib, python]
 ---
@@ -9,28 +9,48 @@ tags: [matplotlib, python]
 
 ### 系统环境
 
-* ubuntu
-* python 3.4
-* matplotlib 使用 Qt5
+* ubuntu/macos
+* pyenv 和 virtualenv
 
 
 
-### 操作步骤
 
-* 拷贝字体文件到 matplotlib 字体目录下
+## 显示配置
 
-~~~tex
-# 查看系统是否有 SimHei 字体，如果没有则从 windows 系统下拷贝 simhei.ttf 这个字体文件
+修改 `~/.matplotlibrc` 配置文件（对于macos来说是 `~/.matplotlib/matplotlibrc` 文件）
 
-$ fc-list | grep -i SimHei
-/usr/share/fonts/winfont/simhei.ttf: 黑体,SimHei:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+~~~sh
+# macos 修改如下即可解决加载 _macosx 模块错误：
+#       **RuntimeError**: Python is not installed as a framework
+backend: TkAgg
 
-$ cp /usr/share/fonts/winfont/simhei.ttf /home/joans/.pyenv/versions/venv347/lib/python3.4/site-packages/matplotlib/mpl-data/fonts/ttf/
+# 如果使用 QT5 的话配置如下
+# backend: Qt5Agg
+~~~
+
+其他后端支持参考官网 `Backends` 章节：[Matplotlib Backends](https://matplotlib.org/tutorials/introductory/usage.html#backends)
+
+
+
+
+
+
+### 中文支持
+
+* 拷贝 `SimHei` 字体文件到 matplotlib 字体目录下，`SimHei` 字体来源如下：
+  1. Windows 系统的字体文件夹下面拷贝
+  2. 点击这里[下载](https://github.com/joans321/joans321.github.io/blob/master/assets/download/SimHei.ttf)
+  3. Linux/Mac 系统通过 `fc-list | grep -i SimHei` 命令查看系统是否已经安装该字体
+
+~~~Sh
+# 拷贝 SimHei.ttf 字体文件到 matplotlib 安装目录
+# 本文使用的是 pyenv 虚拟环境安装的, 读者要根据具体情况修改路径
+$ cp SimHei.ttf ~/.pyenv/versions/venv347/lib/python3.4/site-packages/matplotlib/mpl-data/fonts/ttf/
 ~~~
 
 
 
-* 修改 ~/.matplotlibrc 配置文件
+* 修改 `~/.matplotlibrc` 配置文件（对于macos来说是 `~/.matplotlib/matplotlibrc` 文件）
 
 ~~~tex
 font.family         : sans-serif
@@ -44,10 +64,33 @@ font.sans-serif     : SimHei, DejaVu Sans, Bitstream Vera Sans, Lucida Grande, V
 
 * 删除缓存文件
 
-~~~tex
-rm -rf ~/.cache/matplotlib/
+~~~sh
+# for ubuntu
+$ rm -rf ~/.cache/matplotlib/
+
+# for macos
+$ rm -rf ~/.matplotlib/fontList.json 
+$ rm -rf ~/.matplotlib/tex.cache/
 ~~~
 
 
 
 * 重新启动 python 即可让 matplotlib 支持中文
+
+
+
+* 启动 python 检查是否配置成功
+
+~~~sh
+>>> import matplotlib.pyplot as plt
+
+# 查看该字体第一个是不是 SimHei
+>>> plt.rcParams['font.sans-serif']
+['SimHei', 'DejaVu Sans', 'Bitstream Vera Sans', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', 'sans-serif']
+~~~
+
+
+
+
+
+参考：[机器学习 Python 环境搭建](/2018/03/03/ai-setup)
