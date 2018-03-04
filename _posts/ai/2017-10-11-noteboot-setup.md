@@ -30,6 +30,16 @@ $ pip install ipython
 $ pip install jupyter
 ```
 
+本博客使用 `Jekyll` 静态网页，不支持 `notebook` 的 `.ipynb` 格式，需要手动执行脚本将其转换成 `markdown` 格式，脚本地址为：[notebook-to-md.sh](https://github.com/joans321/joans321.github.io/blob/master/notebook-to-md.sh)
+
+
+
+## 软件配置
+
+使用 `jupyter-notebook --generate-config` 生成配置文件，然后修改配置：
+
+配置项参考官网介绍：http://jupyter-notebook.readthedocs.io/en/stable/config.html
+
 
 
 ## ipynb转pdf

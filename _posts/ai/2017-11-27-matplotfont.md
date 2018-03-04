@@ -32,6 +32,19 @@ backend: TkAgg
 
 
 
+使用 `Jupyter-notebook` 时，可以通过以下参数指定生成图片大小及分辨率：
+
+~~~sh
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+# 设置图像大小及dpi
+plt.rcParams["figure.figsize"] = [12, 9]
+plt.rcParams['figure.dpi'] = 200
+~~~
+
+
+
 
 
 
