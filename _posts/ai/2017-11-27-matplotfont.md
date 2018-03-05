@@ -43,6 +43,12 @@ plt.rcParams["figure.figsize"] = [12, 9]
 plt.rcParams['figure.dpi'] = 200
 ~~~
 
+或者使用 notebook 渲染引擎：
+
+~~~sh
+%matplotlib notebook
+~~~
+
 
 
 
