@@ -27,7 +27,10 @@ sed -i'' -e "s#$asset_name#/assets/$asset_name#g" $out_file
 sed -i'' -e '/IPython.core.display.Javascript/d' $out_file
 
 rm -rf assets/$asset_name
-mv $out_asset assets/
+if [ -e "$out_asset" ]; then
+  mv $out_asset assets/
+fi
+
 mv $out_file  _posts/ai/
 
 

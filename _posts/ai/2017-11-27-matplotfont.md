@@ -51,6 +51,15 @@ plt.rcParams['figure.dpi'] = 200
 
 
 
+## 坐标轴负号变方块
+
+修改 `~/.matplotlibrc` 配置文件（对于macos来说是 `~/.matplotlib/matplotlibrc` 文件）
+
+~~~sh
+# 解决 matplotlib 坐标轴负号变方块问题
+axes.unicode_minus  : False
+~~~
+
 
 
 
