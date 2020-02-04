@@ -6,7 +6,7 @@
   var gitalk = new Gitalk({
       clientID:  '4aeb48aae37f6f16326b',
       clientSecret: '26a110216c6479cfeffa0aff75e5de7794c36c26',
-      accessToken: '39f20a6b8a3f1d70abec949e976cf63117eabf3f',
+      accessToken: '1588558601423a023b55c240f08dea0a69e2fbda',
       repo: 'comments',
       id: window.location.pathname,
       owner: 'joans321',
